@@ -2,6 +2,7 @@
 @font-face {
  font-family: "Half Grotesk";
  src: url(font1.woff2);
+ font-weight: 200!important;
 }
 
 body{
@@ -16,7 +17,7 @@ scroll-behavior: smooth;
 }
 
 .grotesk{
-font-family: "Cabinet Grotesk Medium", sans-serif;
+font-family: "Cabinet Grotesk Medium", "Half Grotesk";
 }
 
 .half-gro{
@@ -103,7 +104,7 @@ position: fixed;
 border-radius: 0px 0px 5px 0px;
 display: flex;
 flex-direction: column;
-justify-content: space-evenly;
+justify-content: space-around;
 align-items: center;
 box-sizing: border-box;
 z-index: 1;
@@ -198,6 +199,7 @@ font-family: "Half Grotesk";
 .note{
 font-size: 16px;
 line-height: 1.3rem;
+font-weight: 100;
 }
 
 .about{
