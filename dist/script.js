@@ -1,30 +1,50 @@
-const left = document.querySelector("#left");
-const right = document.querySelector("#right");
+const left = document.querySelector("#left"),  right = document.querySelector("#right"),  imgs = document.querySelectorAll(".carousel img"),  trigger = document.querySelector("#trigger"),  nav = document.querySelector(".nav"),  links = document.querySelectorAll(".nav > a");
 
-const num = localStorage.getItem("index");
+var offset = 0, nav_is_opened = false;
 
-var anchor = 0;
+links.forEach((link) =>{
+link.onclick = () => {
+nav.style.width = "0%";
+nav.style.height = "0vh";
+nav.style.opacity = 0;
+nav_is_opened = false;
+}
+});
 
+trigger.addEventListener("click", () =>{
+if(nav_is_opened){
+nav.style.width = "0%";
+nav.style.height = "0vh";
+nav.style.opacity = 0;
+nav_is_opened = false;
+}else{
+nav.style.opacity = 1;
+nav.style.width = "60%";
+nav.style.height = "35vh";
+nav_is_opened = true;
+}
+})
 
 left.addEventListener("click", () =>{
-if(anchor == 1){
-anchor = 3;
+if(offset == 0){
+offset = -((290*imgs.length)-290);
 }else{
-anchor--;
+offset+= 290;
 }
 
-left.setAttribute("href", "#img"+anchor);
-
-localStorage.setItem("index", anchor);
+imgs.forEach((img) =>{
+img.style.transform = "translateX("+offset+"px)";
+})
 })
 
 right.addEventListener("click", () =>{
-if(anchor == 3){
-anchor = 1;
+if(offset == -((290*imgs.length)-290)){
+offset = 0;
 }else{
-anchor++;
+offset-= 290;
 }
 
-right.setAttribute("href", "#img"+anchor);
-localStorage.setItem("index", anchor);
+imgs.forEach((img) =>{
+img.style.transform = "translateX("+offset+"px)";
+})
 })

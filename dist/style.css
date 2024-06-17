@@ -10,7 +10,7 @@ padding: 0;
 }
 
 *{
-transition: .3s;
+transition: .8s;
 scroll-behavior: smooth;
 -webkit-scroll-behavior: smooth;
 }
@@ -96,24 +96,24 @@ box-sizing: border-box;
 }
 
 header > .nav{
-width: 70%;
-height: 100vh;
-position: absolute;
-background: transparent;
-border-radius: 0px 0px 2px 0px;
+width: 0%;
+height: 0vh;
+background: #1DAAE5;
+position: fixed;
+border-radius: 0px 0px 5px 0px;
 display: flex;
 flex-direction: column;
-justify-content: flex-start;
+justify-content: space-evenly;
 align-items: center;
-padding-top: 30px;
 box-sizing: border-box;
-transform: scale(0,0);
 z-index: 1;
+opacity: 0;
+transition: .2s;
 }
 
 .nav a{
 text-decoration: none;
-color: #1E202D;
+color: white;
 }
 
 .nav span{
@@ -269,16 +269,18 @@ width: 300px;
 height: 350px;
 border-radius: 15px;
 display: flex;
+overflow-x: hidden;
 padding: 5px;
-overflow-x: scroll;
+box-sizing: border-box;
+background: rgba(0,0,0,0.1);
 }
 
-.carousel img{
-width: 400px!important;
+.carousel > img{
+min-width: 280px!important;
 height: 100%;
 border-radius: inherit;
 display: inline-block;
-margin-right: 5px;
+padding-inline: 5px;
 }
 
 
@@ -287,9 +289,6 @@ width: 50%;
 align-self: flex-start;
 }
 
-.carousel-controls a{
-text-decoration: none;
-}
 
 .carousel-controls i{
 font-size: 60px;
